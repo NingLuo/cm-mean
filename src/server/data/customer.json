@@ -1,0 +1,50 @@
+[
+  {
+    "customerId": 1,
+    "name": "Alice",
+    "email": "alice@gmail.com",
+    "tel": "(123)-456-7890",
+    "address": {
+      "street": "11 Spring Str",
+      "city": "Malden",
+      "state": "MA",
+      "zipcode": "02148"
+    }
+  },
+  {
+    "customerId": 2,
+    "name": "Bob",
+    "email": "bob@gmail.com",
+    "tel": "(213)-456-7890",
+    "address": {
+      "street": "12 Summer Str",
+      "city": "Boston",
+      "state": "MA",
+      "zipcode": "02127"
+    }
+  },
+  {
+    "customerId": 3,
+    "name": "Cindy",
+    "email": "cindy@gmail.com",
+    "tel": "(312)-456-7890",
+    "address": {
+      "street": "13 Fall Str",
+      "city": "Allston",
+      "state": "MA",
+      "zipcode": "02134"
+    }
+  },
+  {
+    "customerId": 4,
+    "name": "David",
+    "email": "david@gmail.com",
+    "tel": "(412)-356-7890",
+    "address": {
+      "street": "14 Winter Str",
+      "city": "Brookline",
+      "state": "MA",
+      "zipcode": "02445"
+    }
+  }
+]

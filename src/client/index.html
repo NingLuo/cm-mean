@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>.active { color: red; font-weight: bolder; }</style>
+
+
+
+</head>
+<body ng-app="customerManagement">
+<h1>Customer UI Router</h1>
+<a ui-sref="customerList" ui-sref-active="active">customerApp</a>
+<a ui-sref="about" ui-sref-active="active">About</a>
+
+<ui-view></ui-view>
+
+<!--Script Libraries-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.3/angular-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
+
+<!--App Modules-->
+<script src="app/app.module.js"></script>
+<script src="app/service/service.module.js"></script>
+<script src="app/customer/customer.module.js"></script>
+
+<!--Components-->
+<script src="app/customer/customer-list.component.js"></script>
+<script src="app/customer/customer-detail.component.js"></script>
+
+<!--services-->
+<script src="app/service/customer.service.js"></script>
+</body>
+</html>
