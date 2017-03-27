@@ -4,9 +4,9 @@
 (function () {
     "use strict";
 
-    var module = angular.module("customerManagement", ["ui.router", "ngResource", "ui.mask", "customer.module", "service.module"]);
+    var app = angular.module("customerManagement", ["ui.router", "ngResource", "ui.mask", "customer.module", "service.module"]);
 
-    module.config(function ($stateProvider, $urlRouterProvider) {
+    app.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
 
         var homeState = {

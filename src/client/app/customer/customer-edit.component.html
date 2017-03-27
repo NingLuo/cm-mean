@@ -118,7 +118,9 @@
                     </div>
                 </div>
                 <!-- ZipCode -->
-                <div class="form-group">
+                <div class="form-group"
+                     ng-class="{'has-error': customerForm.inputZipCode.$invalid &&
+                                             customerForm.inputZipCode.$touched}">
                     <label class="col-md-2 control-label" for="inputZipCode">ZipCode</label>
                     <div class="col-md-4">
                         <input class="form-control"
@@ -126,8 +128,15 @@
                                name="inputZipCode"
                                type="text"
                                placeholder="ZipCode"
-                               ng-model="vm.customer.address.zipcode">
+                               ng-model="vm.customer.address.zipcode"
+                               ng-pattern="/^\d{5}(-\d{4})?$/">
                     </div>
+                    <span class="help-block has-error">
+                        <span ng-show="customerForm.inputZipCode.$error.pattern &&
+                                             customerForm.inputZipCode.$touched">
+                            Must be US format zip code (e.g., "94105-0011" or "94105")
+                        </span>
+                    </span>
                 </div>
                 <!-- Button Group -->
                 <div class="form-group">
