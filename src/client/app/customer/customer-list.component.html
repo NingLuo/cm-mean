@@ -17,6 +17,12 @@
                 <a ui-sref="customerDetail({customerId: customer.customerId})" class="btn btn-default">
                     <span class="glyphicon glyphicon-zoom-in"></span>
                 </a>
+                <a ui-sref="customerEdit({customerId: customer.customerId})" class="btn btn-success">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a class="btn btn-danger" ng-click="vm.deleteCustomer(customer.customerId)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
             </td>
         </tr>
         </tbody>

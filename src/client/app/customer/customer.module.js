@@ -4,5 +4,5 @@
 (function () {
     "use strict";
 
-    angular.module("customer.module", []);
+    angular.module("customer.module", ["toastr"]);
 })();

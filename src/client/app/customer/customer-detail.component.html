@@ -1,2 +1,24 @@
-<h3>customer detail</h3>
-<h2>{{vm.customer.name}}</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Customer Information
+    </div>
+
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>Name:</dt>
+            <dd>{{vm.customer.name}}</dd>
+            <dt>Email:</dt>
+            <dd>{{vm.customer.email}}</dd>
+            <dt>Telephone:</dt>
+            <dd>{{vm.customer.tel}}</dd>
+            <dt>Street:</dt>
+            <dd>{{vm.customer.address.street}}</dd>
+            <dt>City:</dt>
+            <dd>{{vm.customer.address.city}}</dd>
+            <dt>State:</dt>
+            <dd>{{vm.customer.address.state}}</dd>
+            <dt>Zip Code:</dt>
+            <dd>{{vm.customer.address.zipcode}}</dd>
+        </dl>
+    </div>
+</div>

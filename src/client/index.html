@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>.active { color: red; font-weight: bolder; }</style>
-
-
-
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
 </head>
 <body ng-app="customerManagement">
-<h1>Customer UI Router</h1>
-<a ui-sref="customerList" ui-sref-active="active">customerApp</a>
-<a ui-sref="about" ui-sref-active="active">About</a>
+<!--<h1>Customer UI Router</h1>-->
 
-<ui-view></ui-view>
+<nav class="navbar navbar-default" class="container-fluid">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">CM</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="customerList">Customer List</a></li>
+            <li>
+                <a ui-sref="customerEdit({customerId: 0})">
+                    <span class="glyphicon glyphicon-plus"></span> Create New Customer
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <ui-view></ui-view>
+</div>
 
 <!--Script Libraries-->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.3/angular-resource.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
+<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
 <!--App Modules-->
 <script src="app/app.module.js"></script>
@@ -29,6 +43,7 @@
 <!--Components-->
 <script src="app/customer/customer-list.component.js"></script>
 <script src="app/customer/customer-detail.component.js"></script>
+<script src="app/customer/customer-edit.component.js"></script>
 
 <!--services-->
 <script src="app/service/customer.service.js"></script>

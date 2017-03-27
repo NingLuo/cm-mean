@@ -12,12 +12,26 @@
             customerList: '<'
         },
         controllerAs: 'vm',
-        controller: function () {
-            var vm = this;
-            vm.$onInit = function () {
-                console.log('this is costomerList component controller');
-                console.log(vm.customerList);
-            }
+        controller: customerListCtrl
+    });
+
+    customerListCtrl.$inject = ['customerService', 'toastr'];
+    /////////////////////////////////////////////////
+
+    function customerListCtrl(customerService, toastr) {
+        var vm = this;
+        vm.deleteCustomer = deleteCustomer;
+
+        function deleteCustomer(customerId) {
+            customerService.remove({customerId: customerId}, function (response) {
+
+                toastr.success('Delete Success');
+
+                //Retrieve updated customer list
+                customerService.query(function (response) {
+                    vm.customerList = response;
+                });
+            });
         }
-    })
+    }
 })();

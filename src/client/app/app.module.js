@@ -6,17 +6,21 @@
 
     var module = angular.module("customerManagement", ["ui.router", "ngResource", "customer.module", "service.module"]);
 
-    module.config(function ($stateProvider) {
+    module.config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/");
+
+        var homeState = {
+            name: 'home',
+            url: '/',
+            template: '<h1>Welcom to Customer Management</h1>'
+        };
+
         var customerListState = {
             name: 'customerList',
             url: '/customerList',
             component: 'customerList',
             resolve: {
-                // customerService: 'customerService',
                 customerList: function (customerService) {
-                    // return customerService.getCustomers().then(function (response) {
-                    //     return response.data;
-                    // });
                     return customerService.query().$promise;
                 }
             }
@@ -24,26 +28,29 @@
 
         var customerDetailState = {
             name: 'customerDetail',
-            url: 'customer/{customerId}',
+            url: '/customerDetail/{customerId}',
             component: 'customerDetail',
             resolve: {
                 customer: function (customerService, $transition$) {
-                    return customerService.get({customerId: $transition$.params().customerId})
+                    return customerService.get({customerId: $transition$.params().customerId}).$promise;
                 }
             }
         };
 
-        var aboutState = {
-            name: 'about',
-            url: '/about',
-            template: '<h3>About!</h3>'
+        var customerEditState = {
+            name: 'customerEdit',
+            url: '/customerEdit/{customerId}',
+            component: 'customerEdit',
+            resolve: {
+                customer: function (customerService, $transition$) {
+                    return customerService.get({customerId: $transition$.params().customerId}).$promise;
+                }
+            }
         };
 
-
-
-
+        $stateProvider.state(homeState);
         $stateProvider.state(customerListState);
         $stateProvider.state(customerDetailState);
-        $stateProvider.state(aboutState);
+        $stateProvider.state(customerEditState);
     })
 })();

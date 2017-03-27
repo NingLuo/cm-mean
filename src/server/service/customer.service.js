@@ -30,10 +30,15 @@ module.exports = function (app) {
      */
     function getCustomerById (req, res) {
         var customerId = req.params.customerId;
-        for(var i = 0; i < customers.length; i++) {
-            if (customers[i].customerId == customerId) {
-                res.json(customers[i]);
+        if (customerId > 0) {
+            for(var i = 0; i < customers.length; i++) {
+                if (customers[i].customerId == customerId) {
+                    res.json(customers[i]);
+                }
             }
+        }
+        else {
+            res.json({customerId: null});
         }
     }
 
