@@ -13,10 +13,25 @@
             customer: '<'
         },
         controllerAs: 'vm',
-        controller: controller
+        controller: customerEditCtrl
     });
 
-    function controller () {
+    customerEditCtrl.$inject = ['customerService', '$state', 'toastr'];
+    ///////////////////////////////////////////////////////
+
+    function customerEditCtrl (customerService, $state, toastr) {
         var vm = this;
+        vm.submit = submit;
+        vm.cancel = cancel;
+
+        function submit() {
+            vm.customer.$save(function (response) {
+                toastr.success('Save Success')
+            });
+        }
+
+        function cancel() {
+            $state.go('customerList');
+        }
     }
 })();

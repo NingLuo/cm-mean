@@ -4,7 +4,7 @@
 (function () {
     "use strict";
 
-    var module = angular.module("customerManagement", ["ui.router", "ngResource", "customer.module", "service.module"]);
+    var module = angular.module("customerManagement", ["ui.router", "ngResource", "ui.mask", "customer.module", "service.module"]);
 
     module.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");

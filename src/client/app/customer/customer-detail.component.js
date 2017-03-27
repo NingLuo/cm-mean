@@ -12,11 +12,12 @@
             customer: '<'
         },
         controllerAs: 'vm',
-        controller: function () {
-            var vm = this;
-            vm.$onInit = function () {
-                console.log(vm.customer.customerId);
-            }
-        }
-    })
+        controller: customerDetailCtrl
+    });
+
+    /////////////////////////////////////////////////
+
+    function customerDetailCtrl () {
+        var vm = this;
+    }
 })();

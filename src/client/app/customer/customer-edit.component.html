@@ -135,7 +135,8 @@
                     <span>
                         <button class="btn btn-success"
                                 style="width: 80px; margin-right: 10px"
-                                ng-click="vm.submit(customerForm.$valid)">
+                                ng-click="vm.submit()"
+                                ng-disabled="customerForm.$invalid">
                             Save
                         </button>
                     </span>
