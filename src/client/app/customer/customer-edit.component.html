@@ -7,6 +7,7 @@
         <form class="form-horizontal" name="customerForm" novalidate>
             <fieldset>
                 <legend>Basic Customer Information</legend>
+                <!--Name-->
                 <div class="form-group"
                      ng-class="{'has-error': customerForm.inputName.$invalid &&
                                              customerForm.inputName.$touched}">
@@ -22,7 +23,7 @@
                                ng-minlength="3"
                                ng-maxlength="12">
                     </div>
-                    <span class="help-block has-error">
+                    <span class="help-block">
                         <span ng-show="customerForm.inputName.$error.required &&
                                              customerForm.inputName.$touched">
                             Customer name is required
@@ -51,7 +52,7 @@
                                ng-model="vm.customer.email"
                                required>
                     </div>
-                    <span class="help-block has-error">
+                    <span class="help-block">
                         <span ng-show="customerForm.inputEmail.$error.required &&
                                              customerForm.inputEmail.$touched">
                             Customer email is required
@@ -71,7 +72,7 @@
                                ng-model="vm.customer.tel"
                                required>
                     </div>
-                    <span class="help-block has-error">
+                    <span class="help-block">
                         <span ng-show="customerForm.inputTelephone.$error.required &&
                                              customerForm.inputTelephone.$touched">
                             Customer Telephone is required
@@ -131,7 +132,7 @@
                                ng-model="vm.customer.address.zipcode"
                                ng-pattern="/^\d{5}(-\d{4})?$/">
                     </div>
-                    <span class="help-block has-error">
+                    <span class="help-block">
                         <span ng-show="customerForm.inputZipCode.$error.pattern &&
                                              customerForm.inputZipCode.$touched">
                             Must be US format zip code (e.g., "94105-0011" or "94105")
